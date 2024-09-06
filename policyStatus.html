@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      table {
+        border-collapse: collapse;
+      } /*이중선 제거*/
+      th,
+      td {
+        width: 100px;
+        height: 50px;
+        text-align: center;
+        border: 1px solid #000;
+
+        vertical-align: top; /* 위 */
+        vertical-align: bottom; /* 아래 */
+        vertical-align: middle; /* 가운데 */
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h2>로그인 정책</h2>
+      <div>
+        <table>
+          <tr>
+            <th scope="col">정책이름</th>
+            <th scope="col">IP</th>
+            <th scope="col">DB 사용자</th>
+            <th scope="col">프로그램명</th>
+            <th scope="col">로그인 여부</th>
+          </tr>
+          <tr>
+            <td>scott 사용자 거부</td>
+            <td>*.*.*.*</td>
+            <td>scott</td>
+            <td>*</td>
+            <td>거부</td>
+          </tr>
+          <tr>
+            <td>외주용역 192.168.1 IP 대역 거부</td>
+            <td>192.168.1.*</td>
+            <td>*</td>
+            <td>*</td>
+            <td>거부</td>
+          </tr>
+          <tr>
+            <td>DBA 192.168.10 IP 대역 허용</td>
+            <td>192.168.10.*</td>
+            <td>*</td>
+            <td>*</td>
+            <td>허용</td>
+          </tr>
+          <tr>
+            <td>sqlplus 프로그램 허용</td>
+            <td>*.*.*.*</td>
+            <td>*</td>
+            <td>%sqlplus%</td>
+            <td>허용</td>
+          </tr>
+        </table>
+      </div>
+      <h2>SQL 정책</h2>
+      <div>
+        <table>
+          <tr>
+            <th scope="col">정책이름</th>
+            <th scope="col">IP</th>
+            <th scope="col">DB 사용자</th>
+            <th scope="col">프로그램명</th>
+            <th scope="col">SELECT 여부</th>
+            <th scope="col">DELETE 여부</th>
+            <th scope="col">UPDATE 여부</th>
+            <th scope="col">INSERT 여부</th>
+          </tr>
+          <tr>
+            <td>scott 사용자 DML 거부</td>
+            <td>*.*.*.*</td>
+            <td>scott</td>
+            <td>*</td>
+            <td>거부</td>
+            <td>거부</td>
+            <td>거부</td>
+            <td>거부</td>
+          </tr>
+          <tr>
+            <td>외주용역 192.168.1 IP 대역 SELECT 허용</td>
+            <td>192.168.1.*</td>
+            <td>*</td>
+            <td>*</td>
+            <td>허용</td>
+            <td>허용</td>
+            <td>허용</td>
+            <td>허용</td>
+          </tr>
+          <tr>
+            <td>DBA 192.168.10 IP 대역 DML 허용</td>
+            <td>192.168.10.*</td>
+            <td>*</td>
+            <td>*</td>
+            <td>허용</td>
+            <td>허용</td>
+            <td>허용</td>
+            <td>허용</td>
+          </tr>
+          <tr>
+            <td>sqlplus 프로그램 DML 허용</td>
+            <td>*.*.*.*</td>
+            <td>*</td>
+            <td>%sqlplus%</td>
+            <td>허용</td>
+            <td>허용</td>
+            <td>허용</td>
+            <td>허용</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
